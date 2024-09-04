@@ -6,15 +6,19 @@ import org.mbds.unice.github.data.model.User
 class UserRepository(
     private val apiService: ApiService
 ) {
+    // Stocke les utilisateurs dans une liste mutable
+    private val users = mutableListOf<User>()
+
     fun getUsers(): List<User> {
-        TODO("Should return the list of users retrieved from the api service")
-    }
+        return apiService.getUsers() // Utilise l'API pour récupérer la liste des utilisateurs
+        }
+
 
     fun addRandomUser() {
-        TODO("Should add a random user")
+        apiService.addRandomUser() // Utilise l'API pour ajouter un utilisateur aléatoire
     }
 
     fun deleteUser(user: User) {
-        TODO("Should remove the user")
+        apiService.deleteUser(user) // Utilise l'API pour supprimer un utilisateur
     }
 }
