@@ -10,15 +10,15 @@ class UserRepository(
     private val users = mutableListOf<User>()
 
     fun getUsers(): List<User> {
-        return apiService.getUsers() // Utilise l'API pour récupérer la liste des utilisateurs
+        return apiService.getUsers()
         }
 
 
     fun addRandomUser() {
-        apiService.addRandomUser() // Utilise l'API pour ajouter un utilisateur aléatoire
+        apiService.addRandomUser()
     }
 
     fun deleteUser(user: User) {
-        apiService.deleteUser(user) // Utilise l'API pour supprimer un utilisateur
+        apiService.deleteUser(user)
     }
 }
