@@ -1,5 +1,6 @@
 package org.mbds.unice.github.ui.users
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -22,18 +23,21 @@ class UserViewModel : ViewModel() {
         // On initialise la liste des utilisateurs à la création du ViewModel
         refresh()
     }
-
+// nous avons ajoute des logs pour eviter a l'appli de faire un refresh avant de prendre en compte les nouvelles modifications
     private fun refresh() {
         _users.value = userRepository.getUsers()
+        Log.d("UserViewModel", "User list refreshed: ${_users.value}")
     }
 
     fun generateRandomUser() {
         userRepository.addRandomUser()
+        Log.d("UserViewModel", "Random user generated")
         refresh()
     }
 
     fun deleteUser(user: User) {
         userRepository.deleteUser(user)
+        Log.d("UserViewModel", "User ${user.login} deleted")
         refresh()
     }
 }
