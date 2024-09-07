@@ -3,7 +3,7 @@ package org.mbds.unice.github.data.api
 import org.mbds.unice.github.data.model.User
 import java.util.*
 
-object FakeApiServiceGenerator {
+/**object FakeApiServiceGenerator {
 
     @JvmField
     var FAKE_USERS = mutableListOf(
@@ -36,5 +36,43 @@ object FakeApiServiceGenerator {
         User("023", "Simon", "https://api.adorable.io/AVATARS/512/23.png"),
         User("024", "André", "https://api.adorable.io/AVATARS/512/24.png"),
         User("025", "Leopold", "https://api.adorable.io/AVATARS/512/25.png")
+    )
+}*/
+
+// nous avons utilise ui-avatars.com vu que api.adorable.io n'est pas en service depuis un temps
+
+object FakeApiServiceGenerator {
+
+    @JvmField
+    var FAKE_USERS = mutableListOf(
+        User("001", "Jake", "https://ui-avatars.com/api/?name=Jake&size=512"),
+        User("002", "Paul", "https://ui-avatars.com/api/?name=Paul&size=512"),
+        User("003", "Phil", "https://ui-avatars.com/api/?name=Phil&size=512"),
+        User("004", "Guillaume", "https://ui-avatars.com/api/?name=Guillaume&size=512"),
+        User("005", "Francis", "https://ui-avatars.com/api/?name=Francis&size=512"),
+        User("006", "George", "https://ui-avatars.com/api/?name=George&size=512"),
+        User("007", "Louis", "https://ui-avatars.com/api/?name=Louis&size=512"),
+        User("008", "Mateo", "https://ui-avatars.com/api/?name=Mateo&size=512"),
+        User("009", "April", "https://ui-avatars.com/api/?name=April&size=512"),
+        User("010", "Louise", "https://ui-avatars.com/api/?name=Louise&size=512"),
+        User("011", "Elodie", "https://ui-avatars.com/api/?name=Elodie&size=512"),
+        User("012", "Helene", "https://ui-avatars.com/api/?name=Helene&size=512"),
+        User("013", "Fanny", "https://ui-avatars.com/api/?name=Fanny&size=512"),
+        User("014", "Laura", "https://ui-avatars.com/api/?name=Laura&size=512"),
+        User("015", "Gertrude", "https://ui-avatars.com/api/?name=Gertrude&size=512"),
+        User("016", "Chloé", "https://ui-avatars.com/api/?name=Chloe&size=512"),
+        User("017", "April", "https://ui-avatars.com/api/?name=April&size=512"),
+        User("018", "Marie", "https://ui-avatars.com/api/?name=Marie&size=512"),
+        User("019", "Henri", "https://ui-avatars.com/api/?name=Henri&size=512"),
+        User("020", "Rémi", "https://ui-avatars.com/api/?name=Remi&size=512")
+    )
+
+    @JvmField
+    var FAKE_USERS_RANDOM = listOf(
+        User("021", "Lea", "https://ui-avatars.com/api/?name=Lea&size=512"),
+        User("022", "Geoffrey", "https://ui-avatars.com/api/?name=Geoffrey&size=512"),
+        User("023", "Simon", "https://ui-avatars.com/api/?name=Simon&size=512"),
+        User("024", "André", "https://ui-avatars.com/api/?name=Andre&size=512"),
+        User("025", "Leopold", "https://ui-avatars.com/api/?name=Leopold&size=512")
     )
 }
