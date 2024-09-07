@@ -1,5 +1,6 @@
 package org.mbds.unice.github.ui.users
 
+import android.graphics.Color
 import android.view.View
 import android.widget.ImageButton
 import com.bumptech.glide.Glide
@@ -22,7 +23,11 @@ class ListUserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         deleteButton.setOnClickListener { callback.onClickDelete(user) }
     }
 
-}*/
+}
+*/
+
+// nous avons utilise la librairie Glide pour telecharger les images
+
 class ListUserViewHolder(private val binding: ItemListUserBinding) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(user: User, callback: UserListAdapter.Listener) {
@@ -35,8 +40,24 @@ class ListUserViewHolder(private val binding: ItemListUserBinding) : RecyclerVie
         // Assigner le nom d'utilisateur
         binding.itemListUserUsername.text = user.login
 
-        // Assigner l'action de suppression
-        binding.itemListUserDeleteButton.setOnClickListener { callback.onClickDelete(user) }
+        // Changer l'icône du bouton selon le statut activé/désactivé
+        binding.itemListUserDeleteButton.setImageResource(
+            if (user.isActive) R.drawable.ic_delete_black_24dp else R.drawable.ic_restore_black_24dp
+        )
+
+        // Changer le fond de la cellule selon le statut activé/désactivé
+        binding.root.setBackgroundColor(
+            if (user.isActive) Color.WHITE else Color.RED
+        )
+
+        // Assigner l'action de basculement d'état activé/désactivé
+        binding.itemListUserDeleteButton.setOnClickListener {
+            callback.onClickDelete(user)
+        }
     }
 }
+
+
+
+
 

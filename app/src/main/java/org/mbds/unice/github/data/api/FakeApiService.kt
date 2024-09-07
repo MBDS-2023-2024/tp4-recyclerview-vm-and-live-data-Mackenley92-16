@@ -34,6 +34,9 @@ class FakeApiService : ApiService {
      * Delete a [User] from the [FakeApiService.users] list.
      */
     override fun deleteUser(username: User) {
-        _users.remove(username)
+        val index = _users.indexOf(username)
+        if (index != -1) {
+            _users[index] = username.copy(isActive = !username.isActive) // Bascule l'état
+        }
     }
 }
